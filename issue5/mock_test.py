@@ -34,5 +34,7 @@ def test_get_cases3():
 
 
 def test_raise_type_error():
+    """ Перехват исключения при получении аргумента
+        неправильного типа"""
     with pytest.raises(TypeError):
-        what_is_year_now('dr')
+        what_is_year_now()
