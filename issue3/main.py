@@ -4,11 +4,14 @@ import unittest
 
 class TestFitTransform(unittest.TestCase):
     def test_moscow(self):
+        """ Проверяет правильно ли трансформируется Moscow"""
         actual = fit_transform('Moscow')
         expected = [('Moscow', [1])]
         self.assertEqual(actual, expected)
 
     def test_not_equal(self):
+        """ Проверяет, определяет ли функция неправильный перевод
+            одного из городов"""
         cities = ['Moscow', 'New York', 'Moscow', 'London']
         actual = fit_transform(cities)
         expected = [
@@ -20,6 +23,8 @@ class TestFitTransform(unittest.TestCase):
         self.assertNotEqual(actual, expected)
 
     def test_not_in(self):
+        """ Проверяет, находятся ли все трансформированные значения
+            городов в списке правильных значений"""
         cities = ['Moscow', 'New York', 'Moscow', 'London']
         actual = fit_transform(cities)[0]
         expected = [
@@ -31,9 +36,12 @@ class TestFitTransform(unittest.TestCase):
         self.assertIn(actual, expected)
 
     def test_empty(self):
+        """ Проверяет правильность вывода при обработке
+            пустой строки"""
         self.assertEqual(fit_transform(''), [('', [1])])
 
     def test_error_raise(self):
+        """ Перехват исключения при отсутствии аргумента"""
         self.assertRaises(Exception, fit_transform())
 
 

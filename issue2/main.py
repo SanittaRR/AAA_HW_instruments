@@ -9,4 +9,5 @@ import pytest
         ('SOS', 'S'),
     ], )
 def test_decode(source_morse, result):
+    """ Проверяет правильность декодирования функции decode"""
     assert decode(source_morse) == result

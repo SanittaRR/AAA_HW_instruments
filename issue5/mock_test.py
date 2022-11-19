@@ -4,6 +4,8 @@ import pytest
 
 
 def test_get_cases1():
+    """ Проверка правильности вывода текущего года,
+        при формате даты YYYY-MM-DD """
     with patch("urllib.request.urlopen") as mocked_get_cases:
         with patch("json.load") as mocked_get_cases2:
             mocked_get_cases2.return_value = {'currentDateTime': "2022-11-18 00:00:00"}
@@ -12,6 +14,8 @@ def test_get_cases1():
 
 
 def test_get_cases2():
+    """ Проверка правильности вывода текущего года,
+        при формате даты DD.MM.YYYY """
     with patch("urllib.request.urlopen") as mocked_get_cases:
         with patch("json.load") as mocked_get_cases2:
             mocked_get_cases2.return_value = {'currentDateTime': "01.10.2023 00:00:00"}
@@ -20,6 +24,8 @@ def test_get_cases2():
 
 
 def test_get_cases3():
+    """ Проверка выдачи ошибки,
+        при неправильном формате даты """
     with patch("urllib.request.urlopen") as mocked_get_cases:
         with patch("json.load") as mocked_get_cases2:
             mocked_get_cases2.return_value = {'currentDateTime': "01:10:2023 00:00:00"}
