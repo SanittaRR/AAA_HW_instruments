@@ -27,6 +27,6 @@ def test_get_cases3():
             mocked_get_cases.assert_called_once()
 
 
-#def test_raise_type_error():
-    #with pytest.raises(TypeError):
-        #what_is_year_now('dr')
+def test_raise_type_error():
+    with pytest.raises(TypeError):
+        what_is_year_now('dr')

@@ -15,4 +15,7 @@
 5) Формируем отчет о покрытии в виде директории с html файлами
 > $ python -m pytest --cov . --cov-report html
 
+> http://localhost:63342/AAA_HW_instruments/htmlcov/mock_test_py.html?_ijt=s3e3igdq2fltpd17jf683097jl&_ij_reload=RELOAD_ON_SAVE
+
+>http://localhost:63342/AAA_HW_instruments/htmlcov/what_is_year_now_py.html?_ijt=s3e3igdq2fltpd17jf683097jl&_ij_reload=RELOAD_ON_SAVE
 
