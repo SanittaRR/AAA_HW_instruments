@@ -1,0 +1,36 @@
+============================= test session starts ==============================
+collecting ... collected 5 items
+
+main.py::TestFitTransform::test_empty PASSED                             [ 20%]
+main.py::TestFitTransform::test_error_raise FAILED                       [ 40%]
+main.py:35 (TestFitTransform.test_error_raise)
+self = <main.TestFitTransform testMethod=test_error_raise>
+
+    def test_error_raise(self):
+>       self.assertRaises(Exception, fit_transform())
+
+main.py:37:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = ()
+
+    def fit_transform(*args: str) -> List[Tuple[str, List[int]]]:
+        """
+        fit_transform(iterable)
+        fit_transform(arg1, arg2, *args)
+        """
+        if len(args) == 0:
+>           raise TypeError('expected at least 1 arguments, got 0')
+E           TypeError: expected at least 1 arguments, got 0
+
+one_hot_encoder.py:10: TypeError
+
+
+
+main.py::TestFitTransform::test_moscow PASSED                            [ 60%]
+main.py::TestFitTransform::test_not_equal PASSED                         [ 80%]
+main.py::TestFitTransform::test_not_in PASSED                            [100%]
+
+========================= 1 failed, 4 passed in 0.05s ==========================
+
+Process finished with exit code 1

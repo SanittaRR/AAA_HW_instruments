@@ -1,0 +1,81 @@
+============================= test session starts ==============================
+collecting ... collected 1 item
+
+main.py::test_get_cases1 PASSED                                          [100%]
+
+============================== 1 passed in 0.07s ===============================
+
+Process finished with exit code 0
+
+
+
+
+============================= test session starts ==============================
+collecting ... collected 1 item
+
+main.py::test_get_cases2 FAILED                                          [100%]
+main.py:13 (test_get_cases2)
+2023 != 2022
+
+Expected :2022
+Actual   :2023
+<Click to see difference>
+
+def test_get_cases2():
+        with patch("urllib.request.urlopen") as mocked_get_cases:
+            with patch("json.load") as mocked_get_cases2:
+                mocked_get_cases2.return_value = {'currentDateTime': "01.10.2023 00:00:00"}
+>               assert what_is_year_now() == 2022
+E               assert 2023 == 2022
+E                +  where 2023 = what_is_year_now()
+
+main.py:18: AssertionError
+
+
+============================== 1 failed in 0.08s ===============================
+
+Process finished with exit code 1
+
+
+
+
+============================= test session starts ==============================
+collecting ... collected 1 item
+
+main.py::test_get_cases3 FAILED                                          [100%]
+main.py:21 (test_get_cases3)
+def test_get_cases3():
+        with patch("urllib.request.urlopen") as mocked_get_cases:
+            with patch("json.load") as mocked_get_cases2:
+                mocked_get_cases2.return_value = {'currentDateTime': "01:10:2023 00:00:00"}
+>               assert what_is_year_now() == 2022
+
+main.py:26:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def what_is_year_now() -> int:
+        """
+        Получает текущее время из API-worldclock и извлекает из поля 'currentDateTime' год
+
+        Предположим, что currentDateTime может быть в двух форматах:
+          * YYYY-MM-DD - 2019-03-01
+          * DD.MM.YYYY - 01.03.2019
+        """
+        with urllib.request.urlopen(API_URL) as resp:
+            resp_json = json.load(resp)
+
+        datetime_str = resp_json['currentDateTime']
+        if datetime_str[YMD_SEP_INDEX] == YMD_SEP:
+            year_str = datetime_str[YMD_YEAR_SLICE]
+        elif datetime_str[DMY_SEP_INDEX] == DMY_SEP:
+            year_str = datetime_str[DMY_YEAR_SLICE]
+        else:
+>           raise ValueError('Invalid format')
+E           ValueError: Invalid format
+
+what_is_year_now.py:33: ValueError
+
+
+============================== 1 failed in 0.07s ===============================
+
+Process finished with exit code 1
