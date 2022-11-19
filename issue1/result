@@ -1,0 +1,93 @@
+**********************************************************************
+File "/Users/saniya/AAA_HW_instruments/issue1/*.py", line 31, in *.encode
+Failed example:
+    encode('SOS')
+Expected:
+    '...      --- ...'
+Got:
+    '... --- ...'
+**********************************************************************
+File "/Users/saniya/AAA_HW_instruments/issue1/*.py", line 37, in *.encode
+Failed example:
+    encode('SOS')
+Expected:
+    '.-.'
+Got:
+    '... --- ...'
+**********************************************************************
+File "/Users/saniya/AAA_HW_instruments/issue1/*.py", line 39, in *.encode
+Failed example:
+    encode(2)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest *.encode[4]>", line 1, in <module>
+        encode(2)
+      File "/Users/saniya/AAA_HW_instruments/issue1/*.py", line 43, in encode
+        encoded_signs = [
+    TypeError: 'int' object is not iterable
+**********************************************************************
+1 items had failures:
+   3 of   5 in *.encode
+***Test Failed*** 3 failures.
+
+
+
+
+
+
+
+Trying:
+    encode('SOS')
+Expecting:
+    '...      --- ...'
+ok
+Trying:
+    encode('SOS')  # doctest: +ELLIPSIS
+Expecting:
+    '...---...'
+ok
+Trying:
+    encode('SOS')  # doctest: +ELLIPSIS
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('SOS')
+Expecting:
+    '.-.'
+**********************************************************************
+File "/Users/saniya/AAA_HW_instruments/issue1/*.py", line 37, in *.encode
+Failed example:
+    encode('SOS')
+Expected:
+    '.-.'
+Got:
+    '... --- ...'
+Trying:
+    encode(2)
+Expecting:
+    '.-.'
+**********************************************************************
+File "/Users/saniya/AAA_HW_instruments/issue1/*.py", line 39, in *.encode
+Failed example:
+    encode(2)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/doctest.py", line 1350, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest *.encode[4]>", line 1, in <module>
+        encode(2)
+      File "/Users/saniya/AAA_HW_instruments/issue1/*.py", line 43, in encode
+        encoded_signs = [
+    TypeError: 'int' object is not iterable
+2 items had no tests:
+    *
+    *.decode
+**********************************************************************
+1 items had failures:
+   2 of   5 in *.encode
+5 tests in 3 items.
+3 passed and 2 failed.
+***Test Failed*** 2 failures.
