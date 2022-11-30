@@ -2,11 +2,12 @@
 platform darwin -- Python 3.10.6, pytest-7.2.0, pluggy-1.0.0 -- /Users/saniya/AAA_HW_instruments/venv/bin/python
 cachedir: .pytest_cache
 rootdir: /Users/saniya/AAA_HW_instruments
+plugins: cov-4.0.0
 collecting ... collected 4 items
 
-issue4/main.py::test_moscow PASSED                                       [ 25%]
-issue4/main.py::test_empty PASSED                                        [ 50%]
-issue4/main.py::test_raise_type_error PASSED                             [ 75%]
-issue4/main.py::test_decode[source_cities0-result0] PASSED               [100%]
+issue4/test_one_hot_encoder.py::test_moscow PASSED                       [ 25%]
+issue4/test_one_hot_encoder.py::test_empty PASSED                        [ 50%]
+issue4/test_one_hot_encoder.py::test_raise_type_error PASSED             [ 75%]
+issue4/test_one_hot_encoder.py::test_decode[source_cities0-result0] PASSED [100%]
 
 ============================== 4 passed in 0.01s ===============================

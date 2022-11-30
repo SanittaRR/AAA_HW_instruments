@@ -5,8 +5,8 @@ import pytest
 @pytest.mark.parametrize(
     "source_morse,result", [
         ('... --- ...', 'SOS'),
-        ('.', 2),
-        ('SOS', 'S'),
+        ('.... ..', 'HI'),
+        ('-.-- . ...', 'YES'),
     ], )
 def test_decode(source_morse, result):
     """ Проверяет правильность декодирования функции decode"""

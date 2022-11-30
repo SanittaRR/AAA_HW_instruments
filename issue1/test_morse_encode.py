@@ -34,10 +34,6 @@ def encode(message: str) -> str:
                 '...---...'
                 >>> encode('SOS')  # doctest: +ELLIPSIS
                 '... --- ...'
-                >>> encode('SOS')
-                '.-.'
-                >>> encode(2)
-                '.-.'
     """
 
     encoded_signs = [

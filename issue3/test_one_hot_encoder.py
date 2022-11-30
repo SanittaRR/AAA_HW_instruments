@@ -1,5 +1,5 @@
-from one_hot_encoder import fit_transform
 import unittest
+from one_hot_encoder import fit_transform
 
 
 class TestFitTransform(unittest.TestCase):
@@ -42,7 +42,8 @@ class TestFitTransform(unittest.TestCase):
 
     def test_error_raise(self):
         """ Перехват исключения при отсутствии аргумента"""
-        self.assertRaises(Exception, fit_transform())
+        with self.assertRaises(Exception):
+            fit_transform()
 
 
 if __name__ == '__main__':

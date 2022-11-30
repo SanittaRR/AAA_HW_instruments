@@ -2,57 +2,11 @@
 platform darwin -- Python 3.10.6, pytest-7.2.0, pluggy-1.0.0 -- /Users/saniya/AAA_HW_instruments/venv/bin/python
 cachedir: .pytest_cache
 rootdir: /Users/saniya/AAA_HW_instruments
+plugins: cov-4.0.0
 collecting ... collected 3 items
 
-issue2/main.py::test_decode[... --- ...-SOS] PASSED                      [ 33%]
-issue2/main.py::test_decode[.-2] FAILED                                  [ 66%]
-issue2/main.py::test_decode[SOS-S] FAILED                                [100%]
+issue2/test_morse_decode.py::test_decode[... --- ...-SOS] PASSED         [ 33%]
+issue2/test_morse_decode.py::test_decode[.... ..-HI] PASSED              [ 66%]
+issue2/test_morse_decode.py::test_decode[-.-- . ...-YES] PASSED          [100%]
 
-=================================== FAILURES ===================================
-_______________________________ test_decode[.-2] _______________________________
-
-source_morse = '.', result = 2
-
-    @pytest.mark.parametrize(
-        "source_morse,result", [
-            ('... --- ...', 'SOS'),
-            ('.', 2),
-            ('SOS', 'S'),
-        ], )
-    def test_decode(source_morse, result):
->       assert decode(source_morse) == result
-E       AssertionError: assert 'E' == 2
-E        +  where 'E' = decode('.')
-
-issue2/main.py:12: AssertionError
-______________________________ test_decode[SOS-S] ______________________________
-
-source_morse = 'SOS', result = 'S'
-
-    @pytest.mark.parametrize(
-        "source_morse,result", [
-            ('... --- ...', 'SOS'),
-            ('.', 2),
-            ('SOS', 'S'),
-        ], )
-    def test_decode(source_morse, result):
->       assert decode(source_morse) == result
-
-issue2/main.py:12: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-issue2/morse.py:42: in decode
-    decoded_letters = [
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-.0 = <list_iterator object at 0x108ecfbb0>
-
-    decoded_letters = [
->       MORSE_TO_LETTER[letter] for letter in morse_message.split()
-    ]
-E   KeyError: 'SOS'
-
-issue2/morse.py:43: KeyError
-=========================== short test summary info ============================
-FAILED issue2/main.py::test_decode[.-2] - AssertionError: assert 'E' == 2
-FAILED issue2/main.py::test_decode[SOS-S] - KeyError: 'SOS'
-========================= 2 failed, 1 passed in 0.03s ==========================
+============================== 3 passed in 0.01s ===============================

@@ -1,36 +1,14 @@
 ============================= test session starts ==============================
+platform darwin -- Python 3.10.6, pytest-7.2.0, pluggy-1.0.0 -- /Users/saniya/AAA_HW_instruments/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/saniya/AAA_HW_instruments
+plugins: cov-4.0.0
 collecting ... collected 5 items
 
-main.py::TestFitTransform::test_empty PASSED                             [ 20%]
-main.py::TestFitTransform::test_error_raise FAILED                       [ 40%]
-main.py:35 (TestFitTransform.test_error_raise)
-self = <main.TestFitTransform testMethod=test_error_raise>
+issue3/test_one_hot_encoder.py::TestFitTransform::test_empty PASSED      [ 20%]
+issue3/test_one_hot_encoder.py::TestFitTransform::test_error_raise PASSED [ 40%]
+issue3/test_one_hot_encoder.py::TestFitTransform::test_moscow PASSED     [ 60%]
+issue3/test_one_hot_encoder.py::TestFitTransform::test_not_equal PASSED  [ 80%]
+issue3/test_one_hot_encoder.py::TestFitTransform::test_not_in PASSED     [100%]
 
-    def test_error_raise(self):
->       self.assertRaises(Exception, fit_transform())
-
-main.py:37:
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-args = ()
-
-    def fit_transform(*args: str) -> List[Tuple[str, List[int]]]:
-        """
-        fit_transform(iterable)
-        fit_transform(arg1, arg2, *args)
-        """
-        if len(args) == 0:
->           raise TypeError('expected at least 1 arguments, got 0')
-E           TypeError: expected at least 1 arguments, got 0
-
-one_hot_encoder.py:10: TypeError
-
-
-
-main.py::TestFitTransform::test_moscow PASSED                            [ 60%]
-main.py::TestFitTransform::test_not_equal PASSED                         [ 80%]
-main.py::TestFitTransform::test_not_in PASSED                            [100%]
-
-========================= 1 failed, 4 passed in 0.05s ==========================
-
-Process finished with exit code 1
+============================== 5 passed in 0.01s ===============================
