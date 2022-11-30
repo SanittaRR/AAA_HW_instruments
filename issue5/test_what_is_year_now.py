@@ -22,14 +22,13 @@ def test_get_cases2():
         mocked_get_cases2.return_value = \
             {'currentDateTime': "01.10.2023 00:00:00"}
         assert what_is_year_now() == 2023
-        mocked_get_cases2.assert_called_once()
+        mocked_get_cases.assert_called_once()
 
 
 def test_get_cases3():
     """ Проверка выдачи ошибки,
         при неправильном формате даты """
-    with patch("urllib.request.urlopen") as mocked_get_cases,\
-         patch("json.load") as mocked_get_cases2:
+    with patch("json.load") as mocked_get_cases2:
         mocked_get_cases2.return_value = \
             {'currentDateTime': "01:10:2023 00:00:00"}
         with pytest.raises(ValueError):
